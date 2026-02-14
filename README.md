@@ -33,8 +33,8 @@ Windows users can run the tool using:
 - WSL (Windows Subsystem for Linux)  
 - Git Bash (limited support)  
 
-### Bash Shell
-Bash version 4 or higher is recommended.
+Bash Shell
+- Bash version 4 or higher is recommended.
 
 Check Bash version:
 ```bash
@@ -77,6 +77,19 @@ Run
 ```bash
 ./File_encryptor.sh
 ```
+### Encryption Details
+- Algorithm: AES-256-GCM
+- Key Derivation: PBKDF2
+- Salt: Automatically generated and stored with file
+- Integrity: Built-in authentication tag (tamper detection)
+
+### Security Notes
+- Losing the password means permanent data loss
+- Passwords are never stored anywhere
+- Salt, IV, and authentication tag are stored inside the encrypted file
+- Decryption fails automatically if:
+- Wrong password is used
+- File is modified or corrupted
 
 
 
